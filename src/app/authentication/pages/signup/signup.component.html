@@ -1,0 +1,92 @@
+<app-auth-layout>
+    <form [formGroup]="register" (ngSubmit)="onRegister()">
+        <div class="heading">
+            <h1 class="m-0">Register</h1>
+        </div>
+        <p>Create a New Account</p>
+        <div class="mb-3">
+            <label class="mb-1">Name</label>
+            <input 
+                class="form-control" 
+                formControlName="username" 
+                type="text" 
+                placeholder="Enter you Name" 
+            />
+            <div *ngIf="register.get('username')?.hasError('required') && register.get('username')?.touched" class="invalid-feedback">
+                Field is Required.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="mb-1">Email</label>
+            <input 
+                class="form-control" 
+                type="email"
+                placeholder="Enter you email" 
+                formControlName="email" 
+            />
+            <div *ngIf="register.get('email')?.hasError('required') && register.get('email')?.touched" class="invalid-feedback">
+                Field is Required.
+            </div>
+            <div *ngIf="register.get('email')?.hasError('email') && register.get('email')?.touched" class="invalid-feedback">
+                Format is not correct
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="mb-1">Phone No.</label>
+            <input 
+                class="form-control" 
+                type="text"
+                placeholder="Enter you email" 
+                formControlName="phoneNumber" 
+                (keypress)="_onlyNumeric($event)"
+            />
+            <div *ngIf="register.get('phoneNumber')?.hasError('required') && register.get('phoneNumber')?.touched" class="invalid-feedback">
+                Field is Required.
+            </div>
+        </div>
+        <div class="mb-2">
+            <label class="mb-1">Password</label>
+            <input 
+                class="form-control" 
+                type="password" 
+                placeholder="Enter your password" 
+                formControlName="password" 
+            />
+            <div *ngIf="register.get('password')?.hasError('required') && register.get('password')?.touched" class="invalid-feedback">
+                Field is Required.
+            </div>
+            <div *ngIf="register.get('password')?.hasError('lengthError') && register.get('password')?.touched" class="invalid-feedback">
+                Password should have minimum 6 characters.
+            </div>
+        </div>
+        <div class="mb-2">
+            <label class="mb-1">Confirm Password</label>
+            <input 
+                class="form-control" 
+                type="password" 
+                formControlName="confirm_password" 
+                placeholder="Enter your password again"
+            />
+            <div *ngIf="register.get('confirm_password')?.hasError('required') && register.get('confirm_password')?.touched" class="invalid-feedback">
+                Field is Required.
+            </div>
+            <div *ngIf="register.get('confirm_password')?.hasError('mismatch') && register.get('confirm_password')?.touched" class="invalid-feedback">
+                Password and Confirm Password does not match.
+            </div>
+        </div>
+        <div class="mb-2">
+            <label class="mb-1">Type</label>
+            <select 
+            class="form-control" 
+            formControlName="role" >
+                <option [value]="'buyer'">Buyer</option>
+                <option [value]="'seller'">Seller</option>
+                <option [value]="'agent'">Agent</option>
+            </select>
+        </div>
+        <div class="register-btn">
+            Already Have an account? <span [routerLink]="['/login']">Login</span> 
+        </div>
+        <button class="btn btn-dark" [disabled]="register.invalid">Signup</button>
+    </form>
+</app-auth-layout>

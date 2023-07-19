@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-xl-3 col-sm-6 col-12" *ngIf="role === 'ROLE_AGENT' || role === 'ROLE_SELLER'"> 
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="icon-pencil primary font-large-2 float-left"></i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>{{data['houseCount']}}</h3>
+                  <span>Total No. of house added</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 col-12"> 
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="icon-pencil primary font-large-2 float-left"></i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>{{data['interestedCount']}}</h3>
+                  <span>Total No. of Interested house</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-xs-3 col-sm-6 col-12">
+      <div id="chartjs-pie"></div>
+    </div>
+</div>

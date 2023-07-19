@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header">
+        Interested Proples Details
+    </div>
+    <div class="card-body">
+        <div class="row-data" *ngFor="let a of info">
+            <div>
+                <strong>User Name:</strong> {{a['username'] || '--'}}
+            </div>
+            <div>
+                <strong>Phone Number:</strong> {{a['phoneNumber'] || '--'}}
+            </div>
+            <div>
+                <strong>Email:</strong> {{a['email'] || '--'}}
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-end">
+        <button class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+    </div>
+</div>

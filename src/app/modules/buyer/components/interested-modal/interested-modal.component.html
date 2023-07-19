@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header">
+        Uploaded By
+    </div>
+    <div class="card-body">
+        <div>
+            <strong>User Name:</strong> {{data['username'] || ''}}
+        </div>
+        <div>
+            <strong>Phone Number:</strong> {{data['phoneNumber'] || ''}}
+        </div>
+        <div>
+            <strong>Email:</strong> {{data['email'] || ''}}
+        </div>
+        <div>
+            <strong>Type:</strong> 
+            <ng-container *ngFor="let b of data['roles']"> 
+                {{roleDefination[b]}}
+            </ng-container>
+        </div>
+    </div>
+    <div class="card-footer text-end">
+        <button class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+    </div>
+</div>

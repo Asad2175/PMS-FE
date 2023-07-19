@@ -1,0 +1,116 @@
+<form [formGroup]="propertyDetails" (ngSubmit)="onSubmit()">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            {{propertyDetails.get('houseId')?.value ? 'Update' : 'Add'}} Property
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label class="form-label">City <span class="text-red">*</span></label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Enter City"
+                            formControlName="city"
+                        />
+                        <div *ngIf="propertyDetails.get('city')?.hasError('required') && propertyDetails.get('city')?.touched" class="invalid-feedback">
+                            Field is Required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label class="form-label">House No <span class="text-red">*</span></label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            formControlName="houseNumber"
+                            placeholder="Enter House No"
+                        />
+                        <div *ngIf="propertyDetails.get('houseNumber')?.hasError('required') && propertyDetails.get('houseNumber')?.touched" class="invalid-feedback">
+                            Field is Required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label class="form-label">Street No <span class="text-red">*</span></label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            formControlName="streetNo"
+                            placeholder="Enter Street No"
+                        />
+                        <div *ngIf="propertyDetails.get('streetNo')?.hasError('required') && propertyDetails.get('streetNo')?.touched" class="invalid-feedback">
+                            Field is Required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label class="form-label">Price <span class="text-red">*</span></label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            formControlName="price"
+                            placeholder="Enter Price"
+                            (keypress)="_onlyNumeric($event)"
+                        />
+                        <div *ngIf="propertyDetails.get('price')?.hasError('required') && propertyDetails.get('price')?.touched" class="invalid-feedback">
+                            Field is Required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label class="form-label">No. of Bed Rooms <span class="text-red">*</span></label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            formControlName="noOfBedRooms"
+                            placeholder="Enter No. of Bed Rooms"
+                            (keypress)="_onlyNumeric($event)"
+                        />
+                        <div *ngIf="propertyDetails.get('noOfBedRooms')?.hasError('required') && propertyDetails.get('noOfBedRooms')?.touched" class="invalid-feedback">
+                            Field is Required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label class="form-label">Type <span class="text-red">*</span></label>
+                        <select class="form-control" formControlName="type">
+                            <option [value]="'rent'">Rent</option>
+                            <option [value]="'sell'">Sell</option>
+                        </select>
+                        <div *ngIf="propertyDetails.get('type')?.hasError('required') && propertyDetails.get('type')?.touched" class="invalid-feedback">
+                            Field is Required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label class="form-label">Specifications <span class="text-red">*</span></label>
+                        <textarea 
+                            class="form-control" 
+                            placeholder="Enter No. of Bed Rooms"
+                            formControlName="specifications"
+                        >
+                        </textarea>
+                        <div *ngIf="propertyDetails.get('specifications')?.hasError('required') && propertyDetails.get('specifications')?.touched" class="invalid-feedback">
+                            Field is Required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-end">
+            <button class="btn me-2" type="button" (click)="close()">Cancel</button>
+            <button class="btn btn-dark me-2" type="submit" [disabled]="propertyDetails.invalid">
+                {{propertyDetails.get('houseId')?.value ? 'Update' : 'Submit'}}
+            </button>
+        </div>
+    </div>
+</form>

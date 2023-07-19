@@ -1,0 +1,7 @@
+.row-data {
+    &:not(:last-child) {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #000;
+    }
+}

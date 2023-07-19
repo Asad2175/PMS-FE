@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-body">
+        <div class="top-bar">
+            <div class="d-flex align-items-center justify-content-end">
+                
+                <div class="btn btn-dark" (click)="openModal()">Add New Property</div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" id="searchTable">
+                <thead>
+                    <tr>
+                        <th>House No.</th>
+                        <th>City</th>
+                        <th>No. Of Rooms</th>
+                        <th>Price</th>
+                        <th>Type</th>
+                        <th class="text-end">Action's</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr" *ngFor="let a of propertyListing">
+                        <td>{{a['houseNumber']}}</td>
+                        <td>{{a['city']}}</td>
+                        <td>{{a['noOfBedRooms']}}</td>
+                        <td>{{a['price']}}</td>
+                        <td>{{a['type'] === 'sell' ? 'Sell' : 'Rent'}}</td>
+                        <td class="text-end">
+                            <button class="btn btn-dark me-2" (click)="edit(a['houseId'])">Edit</button>
+                            <button class="btn btn-dark" (click)="delete(deleteModal, a['houseId'])">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #deleteModal let-modal>
+    <app-delete
+        (nextStepEvent)="acceptDelete($event)"
+    >
+    </app-delete>
+</ng-template>

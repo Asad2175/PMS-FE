@@ -1,0 +1,20 @@
+form {
+    .heading {
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+    p {
+        margin-top: 20px;
+        color: #959595;
+    }
+    .register-btn {
+        font-size: 14px;
+        margin-bottom: 15px;
+        span {
+            color: #0000ff;
+            cursor: pointer;
+        }
+    }
+}

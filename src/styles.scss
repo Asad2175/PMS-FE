@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+.form-control {
+    &:focus {
+        box-shadow: 0 0 0 0 rgba(13,110,253,.25) !important;
+    }
+}
+.invalid-feedback {
+    display: block !important;
+}
+.card {
+    border: 0px!important;
+    border-radius: 0.625rem!important;
+    box-shadow: 0 0 20px #4c577d05;
+}
+td {
+    vertical-align: middle;
+}
+.text-red {
+    color: red;
+}
+body { 
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+.modal-content  {
+    width: auto !important;
+    margin: auto !important;
+}
+.interestedModal .modal-content {
+    min-width: 400px;
+}
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

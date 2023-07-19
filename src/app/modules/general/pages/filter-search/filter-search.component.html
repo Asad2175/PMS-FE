@@ -1,0 +1,70 @@
+<div class="card">
+    <div class="card-body">
+        <div class="top-bar">
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <label class="form-label">Min Price</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Enter Min Price"
+                            [(ngModel)]="minPrice"
+                        />
+                    </div>
+                </div> 
+                <div class="col-3">
+                    <div>
+                        <label class="form-label">Max Price</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Enter Max Price"
+                            [(ngModel)]="maxPrice"
+                        />
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div>
+                        <label class="form-label">Type</label>
+                        <select class="form-control" [(ngModel)]="type">
+                            <option [value]="'rent'">Rent</option>
+                            <option [value]="'sell'">Sell</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-3 align-self-end">
+                    <div>
+                        <button class="btn btn-dark" (click)="search()">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" id="searchTable">
+                <thead>
+                    <tr>
+                        <th>House No.</th>
+                        <th>City</th>
+                        <th>No. Of Rooms</th>
+                        <th>Price</th>
+                        <th>Type</th>
+                        <th>Interested</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr" *ngFor="let a of propertyListing">
+                        <td>{{a['house']['houseNumber']}}</td>
+                        <td>{{a['house']['city']}}</td>
+                        <td>{{a['house']['noOfBedRooms']}}</td>
+                        <td>{{a['house']['price']}}</td>
+                        <td>{{a['house']['type'] === 'sell' ? 'Sell' : 'Rent'}}</td>
+                        <td>
+                            <button class="btn btn-secondary" [disabled]="!a['interested']" (click)="openInfoModal(a['userInfoResponse'])">View</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

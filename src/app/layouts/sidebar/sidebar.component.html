@@ -1,0 +1,13 @@
+<aside>
+    <p> Menu </p>
+    <ng-container *ngIf="activeMenu.length > 0" >
+      <a *ngFor="let m of activeMenu" href="javascript:void(0)" [routerLink]="[m['url']]" [routerLinkActive]="'active'">
+        <i class="fa fa-user-o" aria-hidden="true"></i>
+        {{m['name']}}
+      </a>
+    </ng-container>
+    <a href="javascript:void(0)" (click)="logout()">
+      <i class="fa fa-laptop" aria-hidden="true"></i>
+      Logout
+    </a>
+</aside>

@@ -1,0 +1,47 @@
+<app-auth-layout>
+    <strong>seller:</strong> asad asad2175 <br>
+    <strong>buyer:</strong> hassan hassan2175 <br>
+    <strong>buyer:</strong> megha 123456789 <br>
+    <strong>agent:</strong> yawar yawar2175 <br>
+    <hr>
+
+    <strong>buyer:</strong> buyer 123456789 <br>
+    <strong>seller:</strong> seller 123456789 <br>
+    <strong>agent:</strong> agent 123456789 <br>
+    <hr>
+
+    <form [formGroup]="login" (ngSubmit)="onSubmit()">
+        <div class="heading">
+            <h1 class="m-0">Hello there,</h1>
+            <h1 class="m-0">welcome back!</h1>
+        </div>
+        <p>Login to get going.</p>
+        <div class="mb-3">
+            <label class="mb-1">Username</label>
+            <input 
+                class="form-control" 
+                type="email" 
+                formControlName="username"
+                placeholder="Enter you User Name" 
+            />
+            <div *ngIf="login.get('username')?.hasError('required') && login.get('username')?.touched" class="invalid-feedback">
+                Field is Required.
+            </div>
+        </div>
+        <div class="mb-2">
+            <label class="mb-1">Password</label>
+            <input class="form-control" 
+                type="password" 
+                formControlName="password" 
+                placeholder="Enter your password" 
+            />
+            <div *ngIf="login.get('password')?.hasError('required') && login.get('password')?.touched" class="invalid-feedback">
+                Field is Required.
+            </div>
+        </div>
+        <div class="register-btn">
+            Don't have an account? <span [routerLink]="['/signup']">Register Now</span> 
+        </div>
+        <button type="submit" class="btn btn-dark" [disabled]="login.invalid">Login</button>
+    </form>
+</app-auth-layout>

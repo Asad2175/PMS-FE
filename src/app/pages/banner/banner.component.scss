@@ -1,0 +1,23 @@
+.banner-main {
+    position: relative;
+    img {
+        max-height: 600px;
+        min-height: 400px;
+        width: 100%;
+        object-fit: cover;
+        @media (max-width: 991px) {
+            // min-height: calc(100vh - 120px);
+        }
+    }
+    .content {
+        background: #274abbb0;
+        padding: 20px 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        max-width: 500px;
+        text-align: center;
+    }
+}

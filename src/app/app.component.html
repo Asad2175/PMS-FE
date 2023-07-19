@@ -1,0 +1,7 @@
+<app-loader *ngIf="loader"></app-loader>
+<div class="toast-cus" [ngStyle]="{background: toastr.success === true ? 'rgb(75 75 246 / 62%)' : '#ff0000ab'}" *ngIf="toastr.show">
+    <app-toastr>
+        {{toastr.title}}
+    </app-toastr>
+</div>
+<router-outlet></router-outlet>

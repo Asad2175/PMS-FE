@@ -1,0 +1,9 @@
+// background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+@import '/src/styles/authentication.scss';
+.full {
+    // background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
