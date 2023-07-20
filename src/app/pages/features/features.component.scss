@@ -1,0 +1,25 @@
+.serv_home_1 {
+    margin: 50px 0;
+    @media (max-width: 580px) {
+        margin: 30px 0;
+    }
+    .title {
+        margin-bottom: 40px;
+    }
+    .serv_home_1i {
+        margin-bottom: 20px;
+        .serv_home_1i1 {
+            background: #121B22;
+            padding: 35px 20px 40px 20px;
+        }
+        h4.mgt.col {
+            color: #fff;
+        }
+        p.col {
+            color: #fff;
+        }
+        h5 a.col {
+            color: #fff;
+        }
+    }
+}

@@ -1,9 +1,14 @@
-.find {
+.serv_home_1 {
     margin: 50px 0;
     @media (max-width: 580px) {
         margin: 30px 0;
     }
     .title {
         margin-bottom: 40px;
+    }
+    .suport {
+        .l {
+            margin-bottom: 10px;
+        }
     }
 }

@@ -1,13 +1,26 @@
 <header>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">PMS</a>
+          <a class="navbar-brand" [routerLink]="['/']">AssetPlus</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarText">
-            <button class="btn click me-3" [routerLink]="['/login']">Login</button>
-            <button class="btn click" [routerLink]="['/signup']">Signup</button>
+          <div class="collapse navbar-collapse justify-content-between" id="navbarText">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" [routerLink]="['/']" [routerLinkActive]="'active'">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/features']" [routerLinkActive]="'active'">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/contact-us']" [routerLinkActive]="'active'">Contact Us</a>
+              </li>
+            </ul>
+            <div class="div">
+              <button class="btn click me-3" [routerLink]="['/login']">Login</button>
+              <button class="btn click" [routerLink]="['/signup']">Signup</button>
+            </div>
           </div>
         </div>
     </nav>

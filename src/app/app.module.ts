@@ -22,6 +22,10 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { BannerComponent } from './pages/banner/banner.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { ToastrComponent } from './pages/toastr/toastr.component';
+import { HomeLayoutComponent } from './pages/home-layout/home-layout.component';
+import { FeaturesComponent } from './pages/features/features.component';
+import { HeadingComponent } from './components/heading/heading.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,10 @@ import { ToastrComponent } from './pages/toastr/toastr.component';
     BannerComponent,
     FooterComponent,
     ToastrComponent,
+    HomeLayoutComponent,
+    FeaturesComponent,
+    HeadingComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
